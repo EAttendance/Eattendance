@@ -29,6 +29,24 @@ return true;
 return false;
 }
 }
+public function getStudent(){
+    $data=$this->db->get('tbl_student')->result();
+    return $data;
+}
+public function getLecturer(){
+    $data=$this->db->get('tbl_lecturer')->result();
+    return $data;
+}
+public function getSubject(){
+    $data=$this->db->get('tbl_subject')->result();
+    return $data;
+}
+public function getStudentForSub($id){
     
+}
+
+public function getLecturerForSub($id){
     
+}
+
 }

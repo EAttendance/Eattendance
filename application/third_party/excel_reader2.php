@@ -94,7 +94,10 @@ function v($data,$pos) {
 
 class OLERead {
 	var $data = '';
-	function OLERead(){	}
+ public function __construct()
+    {
+      
+    }
 
 	function read($sFileName){
 		// check if file exist and is readable (Darko Miljanovic)
@@ -912,8 +915,12 @@ class Spreadsheet_Excel_Reader {
 	 *
 	 * Some basic initialisation
 	 */
+     public function __construct($file='',$store_extended_info=true,$outputEncoding='')
+    {
+        
+    }
 	function Spreadsheet_Excel_Reader($file='',$store_extended_info=true,$outputEncoding='') {
-		$this->_ole =& new OLERead();
+		$this->_ole = new OLERead();
 		$this->setUTFEncoder('iconv');
 		if ($outputEncoding != '') { 
 			$this->setOutputEncoding($outputEncoding);
@@ -927,6 +934,7 @@ class Spreadsheet_Excel_Reader {
 		if ($file!="") {
 			$this->read($file);
 		}
+        self::construct($file='',$store_extended_info=true,$outputEncoding='');
 	}
 
 	/**
