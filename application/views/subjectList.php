@@ -149,7 +149,7 @@
 
                 <div class="row">
                     <div class="col-lg-12">
-                           <a href="<?php echo site_url('admin/showUploadStudent'); ?>" class="btn btn-primary pull-right">Add Lecturers</a>
+                           <a href="<?php echo site_url('admin/showUploadSubject'); ?>" class="btn btn-primary pull-right">Add Subjects</a>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-bar-table-o fa-fw"></i> Subject List</h3>
@@ -169,9 +169,9 @@
                    <?php if (count($sub) != 0) {
                     foreach ($sub as $s) {
                         ?>
-                       <tr id="item_<?= $s->subject_code?>"> 
+                       <tr id="item_<?= $s->id?>"> 
 
-                            <td><?php echo $s->subject_code; ?></td>
+                            <td><?php echo $s->id; ?></td>
                             <td><?php echo $s->subject_name; ?></td> 					 				 
                             
                           

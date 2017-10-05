@@ -148,7 +148,7 @@
                
                 <div class="row">
                     <div class="col-lg-12">
-                        <a href="<?php echo site_url('admin/showUploadStudent'); ?>" class="btn btn-primary pull-right">Add Student</a>
+                        <a href="<?php echo site_url('admin/showUploadStudent'); ?>" class="btn btn-primary pull-right">Add Students</a>
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-bar-table-o fa-fw"></i> Student List</h3>

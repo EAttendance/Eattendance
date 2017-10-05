@@ -72,7 +72,7 @@ class Admin extends CI_Controller {
         public function showUploadSubject(){
             $this->load->view('fileUploadSub');
         }
-    public function csvInsertStudent(){
+        public function csvInsertStudent(){
             $this->load->model('login');
             
             $data=$_FILES['file']['tmp_name'];
@@ -81,10 +81,19 @@ class Admin extends CI_Controller {
             $flag = true;
             while(  $row= fgetcsv($fileRead) ){
                 if(!$flag){
+                     $check=$this->checkRow($row[0], 1);
+                if(!$check){
                 $value="'".implode("','", $row)."'";
                 
                 $q="Insert into tbl_student(id,fname,lname) Values(".$value.")";
                  $this->db->query($q);
+                }
+                else{
+                  $sql['id']=row[0];
+                   $sql['fname']=$row[1];
+                   $sql['lname']=$row[2];
+                   $this->db->replace('tbl_student',$sql);
+                }
                 }
                 $flag=false;
             }
@@ -100,10 +109,20 @@ class Admin extends CI_Controller {
             $flag = true;
             while(  $row= fgetcsv($fileRead) ){
                 if(!$flag){
+                $check=$this->checkRow($row[0], 3);
+                if(!$check){
                 $value="'".implode("','", $row)."'";
                 
                 $q="Insert into tbl_lecturer(id,fname,lname) Values(".$value.")";
                  $this->db->query($q);
+                }
+                else{
+                   $sql['id']=$row[0];
+                   $sql['fname']=$row[1];
+                   $sql['lname']=$row[2];
+                   $this->db->replace('tbl_lecturer',$sql);
+                }
+                
                 }
                 $flag=false;
             }
@@ -118,17 +137,25 @@ class Admin extends CI_Controller {
             $flag = true;
             while(  $row= fgetcsv($fileRead) ){
                 if(!$flag){
+                $check=$this->checkRow($row[0], 2);
+                if(!$check){
                 $value="'".implode("','", $row)."'";
                 
-                $q="Insert into tbl_subject(subject_code,subject_name) Values(".$value.")";
+                $q="Insert into tbl_subject(id,subject_name) Values(".$value.")";
                  $this->db->query($q);
                 }
+                else{
+                   $sql['id']=$row[0];
+                   $sql['subject_name']=$row[1];
+                   
+                   $this->db->replace('tbl_subject',$sql);
+                }
+                }
+                
                 $flag=false;
                 
             }
-             $this->load->model('login');
-             $data['sub']=$this->login->getSubject();
-             $this->load->view('subjectList',$data);
+          $this->showSubjects();
     }
     public function showSubjects(){
          $this->load->model('login');
@@ -170,5 +197,27 @@ class Admin extends CI_Controller {
                 }
                 return $sp;
     }
-       
+    public function checkRow($id,$type){
+     $this->db->select('*');
+   
+        if($type==1){
+          $this->db->from('tbl_student');
+    }
+    
+    if($type==2){
+        $this->db->from('tbl_subject');
+    }
+    if($type==3){
+        $this->db->from('tbl_lecturer');
+    }
+      $this->db->where('id',$id);
+      $this->db->limit(1);
+      $query = $this->db->get();
+
+    if ($query->num_rows() == 1) {
+        return true;
+        } else {
+        return false;
+        }
+    }
 }
