@@ -220,4 +220,17 @@ class Admin extends CI_Controller {
         return false;
         }
     }
+    public function getSubjectInfo($id){
+
+    }
+    public function logout() {
+        $this->session->sess_destroy();
+        if (isset($_SESSION)) {
+            session_destroy();
+            //unset($_SESSION);
+        }
+        redirect($this->index());
+    }
+
 }
+?>

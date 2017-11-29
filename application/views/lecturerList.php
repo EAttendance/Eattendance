@@ -1,7 +1,7 @@
  <?php if($_SESSION['logged_in']){
             include('header.php');
-        } ?>
-
+       
+?>
 <div id="page-wrapper">
 
            
@@ -218,8 +218,8 @@
 </body>
 
 </html>
-<?php
 
+<?php } else{ redirect(site_url('admin/index'));}?>
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

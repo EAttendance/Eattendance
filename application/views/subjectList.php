@@ -1,6 +1,6 @@
  <?php if($_SESSION['logged_in']){
             include('header.php');
-        } ?>
+         ?>
 
 <div id="page-wrapper">
 
@@ -217,3 +217,4 @@
 </body>
 
 </html>
+<?php } else{ redirect(site_url('admin/index'));}?>

@@ -49,97 +49,10 @@
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
+              
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu message-dropdown">
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Laura</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i></p>
-                                        <p></p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Cue</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> </p>
-                                        <p></p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-preview">
-                            <a href="#">
-                                <div class="media">
-                                    <span class="pull-left">
-                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
-                                    </span>
-                                    <div class="media-body">
-                                        <h5 class="media-heading"><strong>Paul</strong>
-                                        </h5>
-                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="message-footer">
-                            <a href="#">Read All New Messages</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
-                    <ul class="dropdown-menu alert-dropdown">
-                        <li>
-                            <a href="#"><span class="label label-success">Success</span> SP22 Schedule update complete</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="label label-info">Important</span> Enter Subject info</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="label label-warning">Caution</span> Approve lecturer login</a>
-                        </li>
-                        <li>
-                            <a href="#"><span class="label label-danger">Warning</span> Enroll Students</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">View All</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
-                        </li>
-                    </ul>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-target="#check"><i class="fa fa-user"></i>Admin </a>
+                
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
@@ -149,62 +62,20 @@
                         <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Attendance Report</a>
+                        <a href="<?php echo site_url('admin/showStudent');?>"><i class="fa fa-fw fa-bar-chart-o"></i>Manage Students</a>
                     </li>
                     <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Students Enrolled <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo" class="collapse">
-                            <li>
-                                <a href="tables.html">Student list</a>
-                            </li>
-                            <li>
-                                <a href="#">Add student</a>
-                            </li>
-                        </ul>
+                        <a href="<?php echo site_url('admin/showLecturer'); ?>" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-users"></i> Manage Lecturers </a>
                     </li>
                         <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-book"></i> Subject details<i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo2" class="collapse">
-                            <li>
-                                <a href="forms.html">Subject list</a>
-                            </li>
-                            <li>
-                                <a href="#">Add subject</a>
-                            </li>
-                        </ul>
+                        <a href="<?php echo site_url('admin/showSubjects');?>" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fw fa-book"></i>Manage Subjects</a>
+                        
                     </li>
-                         <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo3"><i class="fa fa-fw fa-arrows-v"></i> Study Periods <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo3" class="collapse">
-                            <li>
-                                <a href="#">SP21</a>
-                            </li>
-                            <li>
-                                <a href="#">SP22</a>
-                            </li>
-                            <li>
-                                <a href="#">SP23</a>
-                            </li>
-                             
-                        </ul>
+                
+                     <li>
+                            <a href="<?php echo site_url('admin/logout');?>"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                     </li>
-                    </li><li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#demo4"><i class="fa fa-fw fa-user"></i> Lecturer<i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="demo4" class="collapse">
-                            <li>
-                                <a href="#">List</a>
-                            </li>
-                            <li>
-                                <a href="#">Permissions</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Settings</a>
-                    </li>
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li>
+                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
