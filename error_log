@@ -1,0 +1,4 @@
+[05-Oct-2017 06:55:53] PHP Parse error:  syntax error, unexpected T_CONST in /home8/jcubitgr/public_html/reports/system/core/CodeIgniter.php on line 58
+[05-Oct-2017 07:01:38] PHP Parse error:  syntax error, unexpected T_CONST in /home8/jcubitgr/public_html/reports/system/core/CodeIgniter.php on line 58
+[05-Oct-2017 07:02:42] PHP Parse error:  syntax error, unexpected T_VAR in /home8/jcubitgr/public_html/reports/system/core/CodeIgniter.php on line 58
+[05-Oct-2017 07:03:23] PHP Parse error:  syntax error, unexpected '[' in /home8/jcubitgr/public_html/reports/application/controllers/Admin.php on line 92
